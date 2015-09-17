@@ -6,7 +6,7 @@
 
 - name: Set JIRA Backdoor Connector in server.xml
   template: src=connector-backdoor dest={{jira_installatie_directory}}/{{jira_installatie_versie}}/conf/server.xml group=jira owner=jira force=yes
-  when: jira_backdoor_connector == "ja"
+  when: jira_backdoor_connector == "yes"
 
 - name: Set JIRA Path in server.xml
   replace: src=connector dest={{jira_installatie_directory}}/{{jira_installatie_versie}}/conf/server.xml regexp='Context path=""' replace='Context path="/{{jira_path}}"' group=jira owner=jira force=yes

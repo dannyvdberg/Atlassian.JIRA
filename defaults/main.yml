@@ -6,12 +6,12 @@ jira_user: jira
 jira_installatie_directory: /opt/atlassian/jira
 jira_data_directory: /opt/application-data/jira
 
-jira_backdoor_connector: ja
+jira_backdoor_connector: yes
 jira_proxy_name: myjira.com
 jira_proxy_port: 443
 jira_proxy_scheme: https
 jira_path: /mycompany
-mysql_connector: ja
+mysql_connector: yes
 
 jira_memory_settings_mn: 1024
 jira_memory_settings_mx: 2048
