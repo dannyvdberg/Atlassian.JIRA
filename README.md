@@ -34,8 +34,6 @@ jira_memory_settings_mx: 2048						# Edit value for a different memory settin
  - hosts: webservers
    roles:
    - dannyvdberg.Atlassian.JIRA
-
-   sudo: yes
 ```
 
 

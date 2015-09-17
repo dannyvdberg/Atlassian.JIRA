@@ -1,10 +1,15 @@
 ---
 galaxy_info:
   author: Danny van den Berg
-  description: 
+  description: Ansible rols which installs and configures a basic Atlassian JIRA Installation
   company: Avisi 
   license: license (GPLv2, CC-BY, etc)
   min_ansible_version: 1.9.3
+  platforms:
+  - name: Ubuntu
+    versions:
+     - 12.04
+     - 14.04
   categories:
   - system
   - development

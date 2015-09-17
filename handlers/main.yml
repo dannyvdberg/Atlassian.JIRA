@@ -1,6 +1,4 @@
----
-# handlers file for Avisi.JIRA
+# handlers file for Atlassian.JIRA
 
  - name: Start JIRA
-   sudo: yes
    service: name=jira state=restarted
