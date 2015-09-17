@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Danny van den Berg
+  description: 
+  company: Avisi 
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.2
+
+dependencies: []
+
+  

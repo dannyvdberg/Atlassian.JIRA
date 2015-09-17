@@ -1,0 +1,45 @@
+ # file: jira/tasks/jira.yml
+
+- name: Add JIRA applicatie user
+  user: name={{jira_user}} shell=/bin/bash groups=sudo append=yes
+
+- name: Create jira installation directory
+  file: path={{jira_installatie_directory}} state=directory owner=jira group=jira
+  
+- name: Create jira data directory
+  file: path={{jira_data_directory}} state=directory owner=jira group=jira recurse=yes
+
+- name: Download jira
+  get_url: url={{jira_url}} dest={{jira_installatie_directory}}/{{jira_tar}} 
+
+- name: Extract jira
+  unarchive: src={{jira_installatie_directory}}/{{jira_tar}} dest={{jira_installatie_directory}} copy=no group=jira owner=jira 
+
+- name: Set JIRA Home in jira-application.properties
+  lineinfile: dest={{jira_installatie_directory}}/{{jira_installatie_versie}}/atlassian-jira/WEB-INF/classes/jira-application.properties line="jira.home = {{jira_data_directory}}"
+
+- name: Set JIRA Memory settings in setenv.sh
+  replace: dest={{jira_installatie_directory}}/{{jira_installatie_versie}}/bin/setenv.sh regexp='384m' replace='{{jira_memory_settings_mn}}m'
+  when: jira_memory_settings_mn is defined
+
+- name: Set JIRA Memory settings in setenv.sh
+  replace: dest={{jira_installatie_directory}}/{{jira_installatie_versie}}/bin/setenv.sh regexp='768m' replace='{{jira_memory_settings_mx}}m'
+  when: jira_memory_settings_mx is defined
+
+- name: Chown jira installation dir
+  file: path={{jira_installatie_directory}}/{{jira_installatie_versie}} state=directory owner=jira group=jira recurse=yes
+
+- name: Chown jira data dir
+  file: path={{jira_data_directory}} state=directory owner=jira group=jira recurse=yes
+
+- name: Create symlink to jira
+  file: path={{jira_installatie_directory}}/current state=link src={{jira_installatie_versie}} owner=jira group=jira mode=0755
+
+- name: Create symlink current java version
+  file: path=/usr/lib/jvm/current state=link src=java-{{java_versie}}-oracle owner=root group=root mode=0755
+
+- name: Remove jira installation tar 
+  command: rm {{jira_installatie_directory}}/{{jira_tar}}
+
+- name: Add startup script JIRA
+  template: src=jira dest=/etc/init.d/jira mode=0751

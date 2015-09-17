@@ -1,0 +1,11 @@
+---
+# tasks file for Avisi.JIRA
+
+ - include: jira.yml
+   tags: [jira, jira-installatie]
+
+ - include: proxy.yml
+   tags: [jira, jira-configuratie]
+
+ - include: mysql.yml
+   tags: [jira, mysql-installatie]
