@@ -35,9 +35,6 @@
 - name: Create symlink to jira
   file: path={{jira_installatie_directory}}/current state=link src={{jira_installatie_versie}} owner=jira group=jira mode=0755
 
-- name: Create symlink current java version
-  file: path=/usr/lib/jvm/current state=link src=java-{{java_versie}}-oracle owner=root group=root mode=0755
-
 - name: Remove jira installation tar 
   command: rm {{jira_installatie_directory}}/{{jira_tar}}
 
