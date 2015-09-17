@@ -1,4 +1,4 @@
-## Avisi - JIRA
+## Atlassian JIRA by Avisi
 
 Ansible rols which installs and configures a basic Atlassian JIRA Installation
 

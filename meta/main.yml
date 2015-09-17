@@ -4,7 +4,10 @@ galaxy_info:
   description: 
   company: Avisi 
   license: license (GPLv2, CC-BY, etc)
-  min_ansible_version: 1.2
+  min_ansible_version: 1.9.3
+  categories:
+  - system
+  - development
 
 dependencies: []
 
