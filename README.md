@@ -23,8 +23,8 @@ jira_proxy_scheme: "https"							# Enter and change your proxyScheme
 jira_path: "/mycompany"								# Enter and change  path if you want to use it
 mysql_connector: "yes"								# Enter yes when you use MySQL as database
 
-jira_memory_settings_mn: 1024 						# Edit value for a different memory setting			
-jira_memory_settings_mx: 2048						# Edit value for a different memory settin
+jira_memory_settings_mn: 1024 						# Edit value for a different memory settings		
+jira_memory_settings_mx: 2048						# Edit value for a different memory settings
 ```
 
 
