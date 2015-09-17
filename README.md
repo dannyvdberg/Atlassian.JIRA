@@ -6,6 +6,8 @@ Ansible rols which installs and configures a basic Atlassian JIRA Installation
 #### Requirements & Dependencies
 - Tested with Ansible 1.9.3 or higher
 - Tested with Ubuntu 14.04
+- Java 1.7.* or Java 1.8*
+- MySQL, PostgreSQL, Oracle, MSS
 
 
 #### Variables
@@ -33,7 +35,7 @@ jira_memory_settings_mx: 2048						# Edit value for a different memory settings
 ---
  - hosts: webservers
    roles:
-   - dannyvdberg.Atlassian.JIRA
+   - dannyvdberg.Atlassian-JIRA
 ```
 
 
