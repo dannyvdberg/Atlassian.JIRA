@@ -37,7 +37,7 @@ jira_installatie_versie: atlassian-jira-{{jira_versie}}-standalone
 ---
  - hosts: webservers
    roles:
-   - Avisi.JIRA
+   - Atlassian.JIRA
 ```
 
 
