@@ -6,10 +6,12 @@ galaxy_info:
   license: license (GPLv2, CC-BY, etc)
   min_ansible_version: 1.9.3
   platforms:
-  - Ubuntu
+  -name: Ubuntu
+   versions:
+   - trusty
   categories:
   - system
   - development
-dependencies: []
+  dependencies: []
 
   
