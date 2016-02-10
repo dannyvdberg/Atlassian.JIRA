@@ -1,5 +1,4 @@
-## Atlassian JIRA by Avisi
-
+## Atlassian JIRA 
 Ansible rols which installs and configures a basic Atlassian JIRA Installation
 
 
@@ -41,7 +40,6 @@ jira_memory_settings_mx: 2048						# Edit value for a different memory settings
 
 ###Author Information
 - Author:		Danny van den Berg
-- Company:		Avisi
 
 
 ###Feedback, bug-reports, requests, ....
